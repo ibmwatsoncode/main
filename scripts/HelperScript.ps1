@@ -19,12 +19,15 @@ function Get-AllFile {
             $all_file | ForEach-Object -Parallel {
             $content =Get-Content "$_"
             Write-Output "Output: " $content
-            Get-WatsonCodeHttp "Explain the below code"
+
+
+            #Get-WatsonCodeHttp "Explain the below code"
 }
     
 }
 
-
+#cd src/components
+#cat Home.jsx
 
 
 Get-AllFile
