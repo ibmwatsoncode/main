@@ -1,9 +1,8 @@
 export const Home1 = () => {
-  for (let i = 0; i < 10; i++) {}
-  let i = 0;
-  while (i < 4) {
-    console.log("ascwc");
-    i++;
+  let s = 2;
+  for (let i = 0; i < 10; i++) {
+    s = s + i;
   }
+  console.log("Result: ", s);
   return <>Read the data</>;
 };
