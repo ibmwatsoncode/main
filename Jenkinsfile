@@ -8,7 +8,7 @@ pipeline {
     }
     stage('hello') {
       steps {
-        sh 'runner.sh'
+        sh 'runner.ps1'
       }
     }
   }
