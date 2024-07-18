@@ -1,12 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('version') {
-      steps {
-        sh 'pwsh --version'
-      }
-    }
-    stage('hello') {
+    stage('git') {
       steps {
         powershell 'runner.ps1'
       }
