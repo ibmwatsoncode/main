@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('git') {
       steps {
-        powershell 'runner.ps1'
+       sh 'pwsh runner.ps1'
       }
     }
   }
