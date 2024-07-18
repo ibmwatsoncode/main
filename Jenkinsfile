@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('git') {
       steps {
-       sh 'pwsh runner.ps1'
+       sh 'runner.ps1'
       }
     }
   }
