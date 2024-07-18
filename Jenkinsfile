@@ -6,9 +6,9 @@ pipeline {
         sh 'pwsh --version'
       }
     }
-    stage('git') {
+    stage('hello') {
       steps {
-         'pwsh runner.ps1'
+        sh 'pwsh runner.ps1'
       }
     }
   }
