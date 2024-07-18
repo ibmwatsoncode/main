@@ -8,7 +8,7 @@ pipeline {
     }
     stage('hello') {
       steps {
-        sh 'runner.ps1'
+        powershell 'runner.ps1'
       }
     }
   }
