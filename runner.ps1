@@ -1,5 +1,5 @@
 #$filePath ='./src/components'
-echo "Get the all file name"
+Write-Host "Get the all file name"
 #function Get-AllFile {
             #echo "Get the all file name"
             #$all_file =Get-ChildItem -Path $filePath -Force
