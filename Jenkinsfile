@@ -5,7 +5,7 @@ pipeline {
         stage('Run Shell Script') {
             steps {
                 script {
-                    sh '''
+                   node{ sh '''
                         #!/bin/bash
 
                         # Define the function to get all file content from the specified directory
@@ -27,6 +27,7 @@ pipeline {
                         # Call the function
                         getAllFiles
                     '''
+                }
                 }
             }
         }
