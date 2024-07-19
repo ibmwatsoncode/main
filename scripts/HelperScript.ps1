@@ -20,13 +20,8 @@ $base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("${
 
 # Add the Authorization header
 $headers["Authorization"] = "Basic $base64AuthInfo"
-# Write-Output "parameters1 :" $parameters
 
-
-$response = Invoke-RestMethod -Uri $apiEndpoint -Method Post -Headers $headers -Body $parameters1
-Write-Output "output Initial :" $response
-
-
+# $response = Invoke-RestMethod -Uri $apiEndpoint -Method Post -Headers $headers -Body $parameters1
 
 function Get-AllFile {
             Write-Host "Get the all file name"
@@ -53,34 +48,22 @@ function Get-AllFile {
             $parameters1 = Get-Content -Path "../parameters.json" -Raw 
             $parameters = Get-Content -Path "../parameters.json" -Raw | ConvertFrom-Json
             $content =Get-Content "$_"
-            Write-Output "COntent :" $content
-           
-
-            foreach ($line in $content) {
-                Write-Output "lines:" $line
-                if ($line.Length -gt 15) {
-       
-            Write-Output "COntent2 :" $content
-            Write-Output "parameters :" $parameters
-            $parameters.text =$line
+            $content = @(
+                $content
+            ) -join "`n"
+            $parameters.text =$content
 
             # $parameters.text =$content
             $updatedParametersJson = $parameters | ConvertTo-Json -Depth 10
-            Write-Output "Updatedparameters :" $updatedParametersJson
-
-        
+            
             # Make the API call
             $response = Invoke-RestMethod -Uri $apiEndpoint -Method Post -Headers $headers -Body $updatedParametersJson
 
             # Extract and display classifications
             $classifications = $response.classifications
-            Write-Output "Initial String: " $classifications[0].class_name
 
             $finalString = $finalString + $classifications[0].class_name
-            Write-Output "Iteration Done."
-        }
-    }
-    Write-Output "Final String: " $finalString
+            Write-Output "Final String: " $finalString
 }
     
 }
