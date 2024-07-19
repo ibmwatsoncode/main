@@ -4,7 +4,7 @@ pipeline {
         stage('Run PowerShell Script from File') {
             steps {
                 script {
-                    def scriptContent = readFile("${WORKSPACE}/runner.ps1")
+                    def scriptContent = readFile("/Users/ambrishsingh/.jenkins/workspace/Powershell/runner.ps1")
                     powershell(scriptContent)
                 }
             }
