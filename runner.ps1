@@ -1,4 +1,4 @@
-$filePath ='.\src\components'
+$filePath ='${WORKSPACE}/src/components'
 
 function Get-AllFile {
             Write-Host "Get the all file name"
